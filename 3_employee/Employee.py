@@ -81,7 +81,7 @@ class Permanent_Employee(Employee):
         elif (len(self._benefits) == 2):
             adj_salary = self.salary * 0.7
             
-        return("{:.1f}".format(adj_salary))
+        return(float(adj_salary))
 
 
     @property
@@ -122,7 +122,7 @@ class Manager(Employee):
 
     def cal_salary(self):
         adj_salary = self.bonus + self.salary
-        return("{:.1f}".format(adj_salary))
+        return(float(adj_salary))
         
 
     @property
@@ -159,7 +159,7 @@ class Temporary_Employee(Employee):
         Returns salary w/ respect to hours worked
         """
         adj_salary = self.hours * self.salary
-        return("{:.1f}".format(adj_salary))
+        return(float(adj_salary))
 
     def __str__(self):
         """
@@ -188,7 +188,7 @@ class Consultant(Temporary_Employee):
         Returns salary w/ respect to hours worked and work trips
         """
         adj_salary = (self.hours * self.salary) + (self.travel * 1000)
-        return("{:.1f}".format(adj_salary))
+        return(float(adj_salary))
         
 
     def __str__(self):
@@ -220,7 +220,7 @@ class Consultant_Manager(Consultant, Manager):
         Returns salary w/ respect to hours worked, work trips, and bonus
         """
         adj_salary = (self.salary * self.hours) + (self.travel * 1000) + self.bonus
-        return("{:.1f}".format(adj_salary))
+        return(float(adj_salary))
 
     def __str__(self):
         """
